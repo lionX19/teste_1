@@ -1,0 +1,104 @@
+/* Définition des couleurs en mode clair */
+:root {
+    --primary-color: #5D5CDE;
+    --text-color: #333;
+    --bg-color: #ffffff;
+    --card-bg: #ffffff;
+    --border-color: #e0e0e0;
+    --hover-color: #f0f0f0;
+    --selected-bg: rgba(93, 92, 222, 0.2);
+}
+
+/* Mode sombre */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-color: #e0e0e0;
+        --bg-color: #121212;
+        --card-bg: #242424;
+        --border-color: #444;
+        --hover-color: #333;
+        --selected-bg: rgba(93, 92, 222, 0.3);
+    }
+}
+
+/* Reset CSS */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style général */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Conteneur principal */
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Style du header */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    color: var(--primary-color);
+}
+
+/* Carte contenant la question */
+.card {
+    background-color: var(--card-bg);
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Options de réponse */
+.option {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-radius: 6px;
+    background-color: var(--hover-color);
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: 0.2s ease;
+}
+
+.option.selected {
+    background-color: var(--selected-bg);
+    border: 1px solid var(--primary-color);
+}
+
+/* Boutons */
+.btn {
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-secondary {
+    background-color: var(--border-color);
+}
+
+/* Masquer des éléments */
+.hidden {
+    display: none;
+}
